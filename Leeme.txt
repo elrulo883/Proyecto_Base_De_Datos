@@ -1,0 +1,54 @@
+Guía de Instalación para el Sistema Web "Barbería"
+1. Requisitos previos
+Antes de comenzar, asegúrate de tener lo siguiente instalado en tu equipo:
+
+XAMPP (o cualquier otro servidor local con PHP, MySQL y Apache).
+Un navegador web.
+Un editor de texto o código como Visual Studio Code o Sublime Text.
+2. Preparar el entorno
+Instalar XAMPP:
+
+Descarga XAMPP desde https://www.apachefriends.org/index.html e instálalo.
+Durante la instalación, asegúrate de seleccionar los módulos de Apache y MySQL.
+Iniciar servicios:
+
+Abre XAMPP y activa los servicios Apache y MySQL.
+3. Configurar los archivos del proyecto
+Mover los archivos PHP:
+
+Copia la carpeta barberia descomprimida en el directorio raíz de tu servidor local:
+Para XAMPP: C:\xampp\htdocs\
+Para otros servidores, revisa el directorio raíz correspondiente.
+Verificar configuraciones en los archivos PHP:
+
+Abre el archivo principal de configuración (normalmente config.php, conexion.php o similar).
+Asegúrate de que los datos de conexión a la base de datos sean correctos:
+$host = 'localhost';
+$user = 'root'; // Usuario por defecto de XAMPP
+$password = ''; // Contraseña vacía por defecto en XAMPP
+$dbname = 'nombre_de_tu_base_de_datos'; // Asegúrate de usar el nombre de tu base
+Si es necesario, ajusta los valores según tu entorno.
+4. Configurar la base de datos
+Importar el archivo SQL:
+Abre phpMyAdmin accediendo a http://localhost/phpmyadmin.
+Crea una nueva base de datos:
+Haz clic en Nueva en el menú lateral izquierdo.
+Escribe el nombre de la base de datos (ejemplo: barberia) y selecciona el cotejamiento utf8_general_ci.
+Haz clic en Crear.
+Importa el archivo SQL:
+Selecciona la base de datos recién creada.
+Ve a la pestaña Importar.
+Haz clic en Seleccionar archivo y elige el archivo .sql incluido en tu proyecto.
+Haz clic en Continuar para cargar los datos.
+5. Probar el sistema
+Abrir el sistema en el navegador:
+
+Ingresa a http://localhost/barberia en tu navegador.
+Verifica que el sistema cargue correctamente.
+Solucionar problemas comunes:
+
+Si aparece un error de conexión a la base de datos, revisa las credenciales en el archivo de configuración PHP.
+Si no se carga correctamente la página, verifica que moviste los archivos al directorio correcto.
+6. (Opcional) Configurar roles y usuarios
+Si tu sistema maneja roles (como administrador, barbero, secretaria), asegúrate de tener usuarios creados en la base de datos:
+Ve a phpMyAdmin y edita la tabla correspondiente (por ejemplo, usuarios o roles) para agregar registros con contraseñas y roles válidos.
